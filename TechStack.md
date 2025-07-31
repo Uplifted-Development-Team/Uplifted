@@ -30,3 +30,28 @@ Personal Logging Service
 
 ## 7. DevOps Layer
 GitHub Actions
+
+# Hosting
+We will have a development and production host.
+
+- Database:
+  - Dev: Supabase Free
+  - Prod: Supabase Free/Pro ($25/month)
+
+- Data Access and Business Logic:
+  - Bundled into API at runtime for both Dev and Prod
+ 
+- API/Application Layer:
+  - Dev: Run Locally
+  - Prod: NOT SURE YET! Trying to find something cheap/free
+ 
+- Presentation Layer (UI)
+  - Dev: Run Locally
+  - Prod: GitHub pages
+ 
+- Presentation Layer Mobile (UI):
+  - Dev: GitHub actions for builds -> artifacts in GitHub Releases
+  - Prod: GitHub Actions builds -> distribute IPA/APK via GitHub Releases or integrate with App Store/Play Store pipelines
+
+- DevOps Layer:
+  - GtHub Actions
