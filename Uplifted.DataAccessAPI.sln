@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36327.8 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uplifted.DataAccessAPI", "Uplifted.DataAccessAPI\Uplifted.DataAccessAPI.csproj", "{54AA9809-AE3E-49DD-AE44-33071D2F668B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{54AA9809-AE3E-49DD-AE44-33071D2F668B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54AA9809-AE3E-49DD-AE44-33071D2F668B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54AA9809-AE3E-49DD-AE44-33071D2F668B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54AA9809-AE3E-49DD-AE44-33071D2F668B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {268D071D-53DA-410D-9F1F-FC2B4435BB99}
+	EndGlobalSection
+EndGlobal

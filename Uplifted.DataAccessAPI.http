@@ -1,0 +1,6 @@
+@Uplifted.DataAccessAPI_HostAddress = http://localhost:5199
+
+GET {{Uplifted.DataAccessAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
