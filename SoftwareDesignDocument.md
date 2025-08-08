@@ -12,42 +12,42 @@ This document will include the design of the Uplifted data entities to help guid
 Entities will include data, views, and their methods.
 
 - User (Role Based Credentials)
-  - ID PK
-  - UserID
-  - UserName
-  - Email
-  - Password
-  - FirstName
-  - LastName
-  - IsActive
-  - DateTimeLastActive
+  - ID: INT PK
+  - UserID: VARCHAR(32)
+  - UserName: VARCHAR(32)
+  - Email: VARCHAR(64)
+  - Password: VARCHAR(256)
+  - FirstName: VARCHAR(32)
+  - LastName: VARCHAR(32)
+  - IsActive: BOOLEAN
+  - DateTimeLastActive: DATETIME
  
 - STDRole
-  - RoleID PK
-  - Name
-  - Description
+  - RoleID: INT PK
+  - Name: VARCHAR(32)
+  - Description: TEXT
 
 - UserToRole
-  - ID PK
-  - UserID (User.ID) FK
-  - RoleID (STDRole.ID) FK
+  - ID: INT PK
+  - UserID: INT (User.ID) FK
+  - RoleID: INT (STDRole.ID) FK
  
 - Group
-  - ID PK
-  - Name
-  - IsActive
+  - ID: INT PK
+  - Name: VARCHAR(32)
+  - IsActive: BOOLEAN
   - CustomWeeklyPlan FK (nulllable->WeeklyPlan)
 
 - STDGroupAccessLevel
-  - AccessLevelID PK
-  - Name
+  - AccessLevelID: INT PK
+  - Name: VARCHAR(32)
 
 - GroupMember
-  - ID PK
-  - Group.ID FK
-  - User.ID FK
-  - AccessLevelID FK
-  - JoinedAt
+  - ID: INT PK
+  - Group.ID: INT FK
+  - User.ID: INT FK
+  - AccessLevelID: INT FK
+  - JoinedAt: DATETIME
 
 - GroupMemberDetails
   - ID PK
@@ -58,72 +58,72 @@ Entities will include data, views, and their methods.
   - DailyCheckInStreakStartDate
 
 - GroupWeeklyGoal
-  - ID PK
-  - Title
-  - Description
-  - DateTimeStreakStart
-  - GroupMember.ID FK
+  - ID: INT PK
+  - Title: VARCHAR(32)
+  - Description: TEXT
+  - DateTimeStreakStart: DATETIME
+  - GroupMember.ID: INT FK
   
 - GroupMonthlyGoal
-  - ID PK
-  - Has streaks
-  - Description
-  - DateTimeStreakStart
-  - GroupMember.ID FK
+  - ID: INT PK
+  - HasStreaks: BOOLEAN
+  - Description: TEXT
+  - DateTimeStreakStart: DATETIME
+  - GroupMember.ID: INT FK
  
 - GroupChat
-  - ID PK
-  - Group.ID FK
-  - Name
-  - Description
-  - DateTimeCreated
-  - DateTimeLastActive
-  - DateTimeLastUpdated
+  - ID: INT PK
+  - Group.ID: INT FK
+  - Name: VARCHAR(32)
+  - Description: TEXT
+  - DateTimeCreated: DATETIME
+  - DateTimeLastActive: DATETIME
+  - DateTimeLastUpdated: DATETIME
  
 - GroupChatMessage
-  - ID PK
-  - GroupChat.ID FK
-  - Sender (User.ID) FK
-  - Message
-  - isEdited
-  - isSystem
-  - CreatedAt
-  - ParentMessage (GroupChatMessage.ID)
+  - ID: INT PK
+  - GroupChat.ID: INT FK
+  - Sender: INT (User.ID) FK
+  - Message: TEXT
+  - isEdited: BOOLEAN
+  - isSystem: BOOLEAN
+  - CreatedAt: DATETIME
+  - ParentMessage: INT (GroupChatMessage.ID)
 
 - GroupChatMessageAttachments
-  - ID PK
-  - GroupChatMessage.ID FK
-  - FileURL
-  - FileType
-  - DateTimeCreated
+  - ID: INT PK
+  - GroupChatMessage.ID: INT FK
+  - FileURL: VARCHAR(512)
+  - FileType: VARCHAR(16)
+  - DateTimeCreated: DATETIME
  
 - Notifications (DON'T DEVELOP YET)
-  - ID PK
-  - Status
-  - GroupChatMessage.ID FK
-  - UserToNotify (User.ID) FK
-  - Category FK
+  - ID: INT PK
+  - Status: VARCHAR(16)
+  - GroupChatMessage.ID: INT FK
+  - UserToNotify: INT (User.ID) FK
+  - Category: INT FK
   - ...MORE ON THIS LATER
  
 - STDNotificationCategories
 
 - GroupPrayerRequests
-  - ID PK
-  - Title
-  - Description
-  - UserToGroup.ID FK
-  - DateTimeCreated
-  - IsFulfilled
+  - ID: INT PK
+  - Title: VARCHAR(32)
+  - Description: TEXT
+  - UserToGroup.ID: INT FK
+  - DateTimeCreated: DATETIME
+  - IsFulfilled: BOOLEAN
  
 - GroupPrayerRequestsScriptureAttachments
-  - ID PK
-  - GroupPrayerRequest.ID FK
-  - UserWhoAttached (User.ID) FK
+  - ID: INT PK
+  - GroupPrayerRequest.ID: INT FK
+  - UserWhoAttached: INT (User.ID) FK
   - Scripture (going to have to think of something here to make UX nice. Maybe the user highlights something in scripture and clicks attach).
  
 - UpliftedAppEvents
-  - ID FK
-  - User.ID FK
-  - EventSource
-  - EventMessage
-  - DateTimeCreated
+  - ID: INT FK
+  - User.ID: INT FK
+  - EventSource: VARCHAR(64)
+  - EventMessage: TEXT
+  - DateTimeCreated: DATETIME
